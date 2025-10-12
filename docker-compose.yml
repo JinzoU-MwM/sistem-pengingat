@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  waha:
+    image: devlikeapro/waha
+    container_name: waha-whatsapp
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - wha_sessions:/app/sessions
+      - wha_storage:/app/storage
+    env_file:
+      - waha.env
+    networks:
+      - waha-network
+
+volumes:
+  wha_sessions:
+    driver: local
+  wha_storage:
+    driver: local
+
+networks:
+  waha-network:
+    driver: bridge

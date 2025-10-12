@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pengingat - Reminder System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sistem Pengingat</h1>
+        <p>Atur pengingat kamu dengan mudah</p>
+    </header>
+
+    <main>
+        <section class="reminder-form">
+            <h2>Tambah Pengingat Baru</h2>
+            <form id="reminderForm">
+                <div class="form-group">
+                    <label for="title">Judul Pengingat:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Deskripsi:</label>
+                    <textarea id="description" name="description" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="datetime">Tanggal & Waktu:</label>
+                    <input type="datetime-local" id="datetime" name="datetime" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="priority">Prioritas:</label>
+                    <select id="priority" name="priority">
+                        <option value="low">Rendah</option>
+                        <option value="medium" selected>Sedang</option>
+                        <option value="high">Tinggi</option>
+                    </select>
+                </div>
+
+                <button type="submit">Tambah Pengingat</button>
+            </form>
+        </section>
+
+        <section class="reminders-list">
+            <h2>Daftar Pengingat</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="active">Aktif</button>
+                <button class="filter-btn" data-filter="completed">Selesai</button>
+            </div>
+            <div id="remindersContainer">
+                <p class="empty-state">Belum ada pengingat. Tambah pengingat baru!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sistem Pengingat</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
